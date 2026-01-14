@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Music, Zap } from 'lucide-react';
 
+// Add type declaration for Safari's webkitAudioContext
+declare global {
+  interface Window {
+    webkitAudioContext: typeof AudioContext;
+  }
+}
+
 const GuitarTuner = () => {
   const [isListening, setIsListening] = useState(false);
   const [frequency, setFrequency] = useState(0);
